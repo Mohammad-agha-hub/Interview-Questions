@@ -152,14 +152,6 @@ export const grammarTopics: Topic[] = [
           "He took notes so as to remember the key points.",
         ],
       },
-      {
-        rule: "FOR FEAR THAT / LEST — to avoid something negative",
-        structure: "main clause + for fear that/lest + subject + verb",
-        examples: [
-          "She whispered for fear that someone might hear her.",
-          "He studied all night lest he fail the exam.",
-        ],
-      },
     ],
   },
   {
@@ -550,15 +542,15 @@ export const grammarTopics: Topic[] = [
         rule: "Reporting Verbs — more specific than say/tell",
         structure: "verb + -ing / to-inf / obj + to-inf / obj + of -ing",
         examples: [
-          "admit + -ing → He admitted cheating on the test.",
-          "suggest + -ing → She suggested taking a taxi.",
-          "agree + to-inf → He agreed to pay for dinner.",
-          "refuse + to-inf → She refused to answer the question.",
-          "warn + obj + not to → She warned me not to go alone.",
-          "accuse + obj + of -ing → He accused her of stealing.",
-          "deny + -ing → She denied taking the money.",
-          "promise + to-inf → He promised to call later.",
-          "apologize + for -ing → He apologized for being late.",
+          "admit + -ing → “I cheated on the test,” he said. → He admitted cheating on the test.",
+          "suggest + -ing → “Let’s take a taxi,” she said. → She suggested taking a taxi.",
+          "agree + to-inf → “I will pay for dinner,” he said. → He agreed to pay for dinner.",
+          "refuse + to-inf → “I won’t answer the question,” she said. → She refused to answer the question.",
+          "warn + obj + not to → “Don’t go alone,” she said to me. → She warned me not to go alone.",
+          "accuse + obj + of -ing → “You stole the money,” he said to her. → He accused her of stealing.",
+          "deny + -ing → “I didn’t take the money,” she said. → She denied taking the money.",
+          "promise + to-inf → “I will call you later,” he said. → He promised to call later.",
+          "apologize + for -ing → “I’m sorry for being late,” he said. → He apologized for being late.",
         ],
       },
       {
@@ -567,7 +559,7 @@ export const grammarTopics: Topic[] = [
           "When the reporting verb is present tense, no backshift needed",
         examples: [
           '"The sun rises in the east." → She says the sun rises in the east.',
-          '"I love you." → He still says he loves her.',
+          '"I love you." → He says he loves her.',
         ],
       },
     ],
