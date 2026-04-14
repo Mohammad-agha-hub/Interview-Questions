@@ -4,15 +4,2033 @@ export type Rule = {
   examples: string[];
 };
 
-export type Topic = {
-  id: string;
-  title: string;
-  color: string;
-  level: 3 | 4 | 5;
-  rules: Rule[];
-};
 
-export const grammarTopics: Topic[] = [
+
+export const grammarTopics = [
+  {
+    id: "bg-static-verbs",
+    title: "Static Verbs",
+    color: "#B45309",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Static (stative) verbs describe states, NOT actions — never used in continuous tenses",
+        structure: "subject + stative verb + complement (NO -ing form)",
+        examples: [
+          "I know the answer. (NOT: I am knowing the answer.)",
+          "She loves chocolate. (NOT: She is loving chocolate.)",
+        ],
+      },
+      {
+        rule: "Common stative verbs — thinking/mind: know, believe, understand, remember, forget",
+        structure: "subject + know/believe/understand + object",
+        examples: [
+          "He understands the question very well.",
+          "I believe that she is telling the truth.",
+        ],
+      },
+      {
+        rule: "Common stative verbs — feelings: like, love, hate, want, need, prefer",
+        structure: "subject + like/love/hate/want/need + object",
+        examples: [
+          "They need more time to finish the project.",
+          "She prefers tea to coffee in the morning.",
+        ],
+      },
+      {
+        rule: "Common stative verbs — senses: see, hear, smell, taste, seem, appear",
+        structure: "subject + sense verb + adjective/object",
+        examples: [
+          "This soup tastes delicious! (NOT: is tasting)",
+          "She seems tired today — maybe she didn't sleep well.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-articles-demonstratives",
+    title: "Articles & Demonstratives",
+    color: "#DC2626",
+    level: "beginner",
+    rules: [
+      {
+        rule: "A / AN — indefinite article (first mention, singular countable nouns)",
+        structure: "a + consonant sound  |  an + vowel sound",
+        examples: [
+          "I have a dog and a cat at home.",
+          "She is an engineer at an international company.",
+        ],
+      },
+      {
+        rule: "THE — definite article (specific, already known, or unique things)",
+        structure: "the + noun (singular or plural)",
+        examples: [
+          "Please close the door — it's getting cold.",
+          "The sun rises in the east every single morning.",
+        ],
+      },
+      {
+        rule: "THIS / THAT — demonstrative adjectives (singular)",
+        structure: "this (near) + singular noun  |  that (far) + singular noun",
+        examples: [
+          "This book is very interesting — I can't put it down.",
+          "That building over there is our new school.",
+        ],
+      },
+      {
+        rule: "THESE / THOSE — demonstrative adjectives (plural)",
+        structure: "these (near) + plural noun  |  those (far) + plural noun",
+        examples: [
+          "These shoes are very comfortable for walking.",
+          "Those children in the park are my neighbors.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-possessive-adj",
+    title: "Possessive Adjectives",
+    color: "#7C3AED",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Possessive adjectives — show who something belongs to",
+        structure: "my, your, his, her, its, our, their + noun",
+        examples: [
+          "I have a dog. My dog is very friendly.",
+          "She has a bag. Her bag is red and white.",
+        ],
+      },
+      {
+        rule: "HIS — male  /  HER — female  /  ITS — things & animals",
+        structure: "his/her/its + noun",
+        examples: [
+          "Tom loves his job — he is a very happy man.",
+          "The cat drinks its milk every morning.",
+        ],
+      },
+      {
+        rule: "OUR — for we/us  /  THEIR — for they/them",
+        structure: "our/their + noun",
+        examples: [
+          "We live in this house. Our house has a big garden.",
+          "They have two cars. Their cars are parked outside.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-gradable-adj",
+    title: "Gradable & Non-Gradable Adj.",
+    color: "#DB2777",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Gradable adjectives — can vary in degree (use very, quite, extremely)",
+        structure: "very / quite / extremely + gradable adjective",
+        examples: [
+          "The weather is very hot today — much hotter than yesterday.",
+          "She is quite tired after working all day long.",
+        ],
+      },
+      {
+        rule: "Non-gradable (absolute) adjectives — already at maximum (use absolutely, completely)",
+        structure: "absolutely / completely / totally + non-gradable adjective",
+        examples: [
+          "The film was absolutely brilliant — I loved every minute.",
+          "The room was completely empty when we arrived.",
+        ],
+      },
+      {
+        rule: "Common non-gradable adjectives: perfect, impossible, unique, dead, frozen, exhausted, starving",
+        structure:
+          "subject + be + absolutely/completely + non-gradable adjective",
+        examples: [
+          "I am absolutely exhausted after the long journey here.",
+          "This idea is completely impossible — we need a new plan.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-quantitative-adj",
+    title: "Quantitative Adj.",
+    color: "#0891B2",
+    level: "beginner",
+    rules: [
+      {
+        rule: "MANY — for countable plural nouns (questions and negatives)",
+        structure: "many + countable plural noun",
+        examples: [
+          "There aren't many students in the classroom today.",
+          "How many books do you have in your bag?",
+        ],
+      },
+      {
+        rule: "MUCH — for uncountable nouns (questions and negatives)",
+        structure: "much + uncountable noun",
+        examples: [
+          "There isn't much sugar left in the jar.",
+          "How much water do you drink every day?",
+        ],
+      },
+      {
+        rule: "A LOT OF / LOTS OF — for both countable and uncountable (positive statements)",
+        structure: "a lot of / lots of + noun",
+        examples: [
+          "She has a lot of friends at school.",
+          "There is a lot of traffic in the city during rush hour.",
+        ],
+      },
+      {
+        rule: "A FEW — small number (countable)  /  A LITTLE — small amount (uncountable)",
+        structure: "a few + countable noun  |  a little + uncountable noun",
+        examples: [
+          "I have a few coins in my pocket — enough for the bus.",
+          "Can I have a little milk in my tea, please?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-whose",
+    title: "Usages of Whose",
+    color: "#059669",
+    level: "beginner",
+    rules: [
+      {
+        rule: "WHOSE — question word to ask about possession",
+        structure: "Whose + noun + is/are + this/that/these/those?",
+        examples: [
+          "Whose bag is this on the table?",
+          "Whose keys are those on the floor?",
+        ],
+      },
+      {
+        rule: "WHOSE — relative pronoun to show possession in a clause",
+        structure: "noun + whose + noun + verb",
+        examples: [
+          "The girl whose hair is long is my sister.",
+          "I know a man whose brother is a famous doctor.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-would",
+    title: "Usages of Would",
+    color: "#D97706",
+    level: "beginner",
+    rules: [
+      {
+        rule: "WOULD — polite requests and offers",
+        structure: "Would you + base verb...?  /  Would you like + noun?",
+        examples: [
+          "Would you please open the window for me?",
+          "Would you like a cup of tea or coffee?",
+        ],
+      },
+      {
+        rule: "WOULD — imaginary / unreal situations (conditional)",
+        structure: "I/he/she + would + base verb (if something were true)",
+        examples: [
+          "I would travel the world if I had more money.",
+          "She would be happier if she had a different job.",
+        ],
+      },
+      {
+        rule: "WOULD — past habits (things done regularly in the past)",
+        structure: "subject + would + base verb (past routine)",
+        examples: [
+          "When I was young, I would walk to school every day.",
+          "Every summer, we would visit our grandparents in the village.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-objective-pronouns",
+    title: "Objective Pronouns",
+    color: "#DC2626",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Objective pronouns — used as the object of a verb or preposition",
+        structure: "me, you, him, her, it, us, them",
+        examples: [
+          "She loves him and he loves her.",
+          "Can you help me with this exercise, please?",
+        ],
+      },
+      {
+        rule: "Object pronoun after verbs",
+        structure: "subject + verb + object pronoun",
+        examples: [
+          "The teacher called us to the front of the class.",
+          "I saw them at the shopping mall yesterday afternoon.",
+        ],
+      },
+      {
+        rule: "Object pronoun after prepositions",
+        structure: "preposition + object pronoun",
+        examples: [
+          "This gift is for her — it's her birthday today.",
+          "He sat next to me during the long flight.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-can",
+    title: "Ability Expression (Can)",
+    color: "#7C3AED",
+    level: "beginner",
+    rules: [
+      {
+        rule: "CAN — ability in the present",
+        structure: "subject + can + base verb",
+        examples: [
+          "I can speak English and a little French.",
+          "She can swim very well — she's on the school team.",
+        ],
+      },
+      {
+        rule: "CANNOT / CAN'T — inability",
+        structure: "subject + can't + base verb",
+        examples: [
+          "He can't drive yet — he's only fifteen years old.",
+          "I can't find my keys — have you seen them?",
+        ],
+      },
+      {
+        rule: "CAN — asking for permission or making a request",
+        structure: "Can + I/you + base verb?",
+        examples: [
+          "Can I borrow your pen for a moment, please?",
+          "Can you help me carry these heavy bags?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-possessive-verbs",
+    title: "Possessive Verbs",
+    color: "#DB2777",
+    level: "beginner",
+    rules: [
+      {
+        rule: "HAVE / HAS — to show possession (present)",
+        structure: "I/You/We/They + have  |  He/She/It + has",
+        examples: [
+          "I have a new bicycle — I got it for my birthday.",
+          "She has two brothers and one younger sister.",
+        ],
+      },
+      {
+        rule: "HAD — possession in the past",
+        structure: "subject + had + noun",
+        examples: [
+          "He had a dog when he was a child.",
+          "They had a small house near the river long ago.",
+        ],
+      },
+      {
+        rule: "HAVE GOT / HAS GOT — informal possession (common in British English)",
+        structure: "I/You/We/They + have got  |  He/She/It + has got",
+        examples: [
+          "I've got a headache — I need to rest.",
+          "She's got a beautiful garden full of flowers.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-wh-questions",
+    title: "WH-Questions",
+    color: "#0891B2",
+    level: "beginner",
+    rules: [
+      {
+        rule: "WHO — asking about a person  /  WHAT — asking about a thing or information",
+        structure: "Who/What + auxiliary + subject + verb?",
+        examples: [
+          "Who is your best friend at school?",
+          "What is your favorite subject at school?",
+        ],
+      },
+      {
+        rule: "WHERE / WHEN / WHY / HOW — place, time, reason, manner",
+        structure: "Wh-word + auxiliary + subject + verb?",
+        examples: [
+          "Where do you live? — I live in Quetta.",
+          "How do you go to school? — I take the bus.",
+        ],
+      },
+      {
+        rule: "WHICH — asking about a choice between options",
+        structure: "Which + noun + auxiliary + subject + verb?",
+        examples: [
+          "Which color do you prefer — blue or green?",
+          "Which bag is yours — the big one or the small one?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-possessive-pronouns",
+    title: "Possessive Pronouns",
+    color: "#059669",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Possessive pronouns — replace a possessive adjective + noun (NO noun after)",
+        structure: "mine, yours, his, hers, ours, theirs",
+        examples: [
+          "This is my book. → This book is mine.",
+          "Is this your pen? → Is this pen yours?",
+        ],
+      },
+      {
+        rule: "Using possessive pronouns to avoid repetition",
+        structure: "subject + possessive pronoun (stands alone)",
+        examples: [
+          "My bag is red. Hers is blue.",
+          "Our house is big. Theirs is even bigger.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-may",
+    title: "Usages of May",
+    color: "#D97706",
+    level: "beginner",
+    rules: [
+      {
+        rule: "MAY — asking for formal permission",
+        structure: "May + I + base verb?",
+        examples: [
+          "May I come in, please?",
+          "May I use your phone for a moment?",
+        ],
+      },
+      {
+        rule: "MAY — possibility (maybe, perhaps)",
+        structure: "subject + may + base verb",
+        examples: [
+          "It may rain later — bring an umbrella just in case.",
+          "She may be at home — try calling her.",
+        ],
+      },
+      {
+        rule: "MAY NOT — negative possibility",
+        structure: "subject + may not + base verb",
+        examples: [
+          "He may not come to the party tonight.",
+          "They may not have enough time to finish.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-present-continuous",
+    title: "Present Continuous Tense",
+    color: "#DC2626",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Present Continuous — action happening right now",
+        structure: "subject + is/am/are + V-ing",
+        examples: [
+          "She is reading a book right now.",
+          "They are playing football in the park.",
+        ],
+      },
+      {
+        rule: "Negative form  |  Question form",
+        structure:
+          "subject + is/am/are + not + V-ing  |  Is/Am/Are + subject + V-ing?",
+        examples: [
+          "He isn't watching TV — he is sleeping.",
+          "Are you listening to me carefully?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-imperatives",
+    title: "Imperatives",
+    color: "#7C3AED",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Positive imperative — giving commands, instructions, advice",
+        structure: "Base verb + (object/complement)",
+        examples: [
+          "Open your books to page twenty.",
+          "Please sit down and be quiet, everyone.",
+        ],
+      },
+      {
+        rule: "Negative imperative — telling someone NOT to do something",
+        structure: "Don't + base verb",
+        examples: [
+          "Don't touch that — it's very hot!",
+          "Don't run in the corridors of the school.",
+        ],
+      },
+      {
+        rule: "Let's — imperative with 'us' (making suggestions together)",
+        structure: "Let's + base verb",
+        examples: [
+          "Let's go for a walk in the park this evening.",
+          "Let's study together after school today.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-adj-order",
+    title: "Orders of Adj.",
+    color: "#DB2777",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Adjective order: Opinion → Size → Age → Shape → Color → Origin → Material → Purpose",
+        structure:
+          "opinion + size + age + shape + color + origin + material + noun",
+        examples: [
+          "She has a beautiful long black leather bag.",
+          "He bought a lovely small old round wooden table.",
+        ],
+      },
+      {
+        rule: "Most common at beginner level: Opinion + Size + Color + Noun",
+        structure: "opinion + size + color + noun",
+        examples: [
+          "She has a nice big red car.",
+          "They live in a beautiful small white house.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-simple-future",
+    title: "Simple Future Tense",
+    color: "#0891B2",
+    level: "beginner",
+    rules: [
+      {
+        rule: "WILL — spontaneous decisions, promises, predictions",
+        structure: "subject + will + base verb",
+        examples: [
+          "I will help you with your homework tonight.",
+          "It will be sunny and warm tomorrow.",
+        ],
+      },
+      {
+        rule: "Negative: won't  |  Question form: Will + subject?",
+        structure:
+          "subject + won't + base verb  |  Will + subject + base verb?",
+        examples: [
+          "She won't be late — she always arrives on time.",
+          "Will you come to my party on Saturday?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-going-to",
+    title: "Future: Going To",
+    color: "#059669",
+    level: "beginner",
+    rules: [
+      {
+        rule: "GOING TO — planned intentions and decisions already made",
+        structure: "subject + is/am/are + going to + base verb",
+        examples: [
+          "I am going to visit my grandparents this weekend.",
+          "They are going to buy a new house next year.",
+        ],
+      },
+      {
+        rule: "GOING TO — predictions based on present visible evidence",
+        structure: "subject + is/am/are + going to + base verb",
+        examples: [
+          "Look at those dark clouds — it's going to rain very soon.",
+          "He's going to fall — be careful!",
+        ],
+      },
+      {
+        rule: "Negative form",
+        structure: "subject + is/am/are + not going to + base verb",
+        examples: [
+          "I'm not going to eat fast food anymore.",
+          "She isn't going to apply for that job.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-simple-present",
+    title: "Simple Present Tense",
+    color: "#D97706",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Simple Present — habits, routines, facts, general truths",
+        structure: "I/You/We/They + base verb  |  He/She/It + verb + s/es",
+        examples: [
+          "I wake up at 7 o'clock every morning.",
+          "She works at a hospital — she is a nurse.",
+        ],
+      },
+      {
+        rule: "Negative: don't / doesn't  |  Question: Do / Does",
+        structure:
+          "subject + don't/doesn't + base verb  |  Do/Does + subject + base verb?",
+        examples: [
+          "I don't like spicy food at all.",
+          "Does she live near the school?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-non-progressive",
+    title: "Non-Progressive Verbs",
+    color: "#DC2626",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Non-progressive (stative) verbs are NOT used in the -ing form",
+        structure: "subject + stative verb (simple tense only — NO continuous)",
+        examples: [
+          "I understand you. (NOT: I am understanding you.)",
+          "She wants a new phone. (NOT: She is wanting a new phone.)",
+        ],
+      },
+      {
+        rule: "Mental states: know, think, believe, remember, forget",
+        structure: "subject + mental verb (present simple)",
+        examples: [
+          "He knows the answer to that question.",
+          "I don't remember her name — sorry!",
+        ],
+      },
+      {
+        rule: "Emotions: love, like, hate, fear, prefer, need, want",
+        structure: "subject + emotion verb (present simple)",
+        examples: [
+          "They love playing in the park after school.",
+          "She needs help with her assignment.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-adv-frequency",
+    title: "Adverbs of Frequency",
+    color: "#7C3AED",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Adverbs of frequency — always, usually, often, sometimes, rarely, never",
+        structure:
+          "subject + adverb + main verb  (before main verb, after 'be')",
+        examples: [
+          "She always drinks coffee in the morning.",
+          "He is never late for class.",
+        ],
+      },
+      {
+        rule: "Position: BEFORE the main verb, AFTER 'be'",
+        structure:
+          "subject + [be] + adverb  OR  subject + adverb + [main verb]",
+        examples: [
+          "I sometimes go for a walk after dinner.",
+          "They are usually very helpful and friendly.",
+        ],
+      },
+      {
+        rule: "HOW OFTEN questions",
+        structure: "How often + do/does + subject + verb?",
+        examples: [
+          "How often do you exercise? — I usually go three times a week.",
+          "How often does she call her parents? — She calls them every day.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-adv-manner",
+    title: "Adverbs of Manner",
+    color: "#DB2777",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Adverbs of manner — describe HOW an action is done (usually after verb/object)",
+        structure: "subject + verb + adverb of manner",
+        examples: [
+          "She speaks English fluently and confidently.",
+          "He ran quickly to catch the school bus.",
+        ],
+      },
+      {
+        rule: "Forming adverbs — adjective + LY",
+        structure: "slow → slowly  |  careful → carefully  |  quiet → quietly",
+        examples: [
+          "Please walk quietly — the baby is sleeping.",
+          "She smiled happily when she heard the good news.",
+        ],
+      },
+      {
+        rule: "Irregular adverbs — good → well  /  fast → fast  /  hard → hard",
+        structure: "subject + verb + irregular adverb",
+        examples: [
+          "He plays football very well — he could be a professional.",
+          "She works very hard every single day.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bg-pc-future",
+    title: "Present Continuous with Future Meaning",
+    color: "#0891B2",
+    level: "beginner",
+    rules: [
+      {
+        rule: "Present Continuous for future — fixed, arranged plans",
+        structure: "subject + is/am/are + V-ing + future time expression",
+        examples: [
+          "I am meeting my friend tomorrow afternoon.",
+          "We are having a party this Friday evening.",
+        ],
+      },
+      {
+        rule: "Difference: GOING TO (intention) vs Present Continuous (arranged appointment)",
+        structure:
+          "I'm going to study. (intention)  vs  I'm studying with Ali at 5. (appointment)",
+        examples: [
+          "She is flying to London next Monday — the ticket is already booked.",
+          "They are starting a new project next week — everything is organised.",
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // LEVEL ONE
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "l1-to-be",
+    title: "To Be Verbs (Present & Past)",
+    color: "#7C3AED",
+    level: 1,
+    rules: [
+      {
+        rule: "To Be — Present: am / is / are",
+        structure: "I + am  |  He/She/It + is  |  You/We/They + are",
+        examples: [
+          "I am a student at this school.",
+          "She is very happy today — it's her birthday.",
+        ],
+      },
+      {
+        rule: "To Be — Past: was / were",
+        structure: "I/He/She/It + was  |  You/We/They + were",
+        examples: [
+          "He was very tired after the long journey.",
+          "We were at home all day yesterday — we didn't go out.",
+        ],
+      },
+      {
+        rule: "Negatives: isn't / aren't / wasn't / weren't  |  Questions: Is/Are/Was/Were?",
+        structure: "subject + wasn't/weren't  |  Was/Were + subject?",
+        examples: [
+          "She isn't at school today — she is sick.",
+          "Was he at the meeting yesterday morning?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-had",
+    title: "Had",
+    color: "#DB2777",
+    level: 1,
+    rules: [
+      {
+        rule: "HAD — past tense of HAVE (possession in the past)",
+        structure: "subject + had + noun",
+        examples: [
+          "She had a beautiful garden when she lived in the countryside.",
+          "I had a dog named Max when I was a child.",
+        ],
+      },
+      {
+        rule: "HAD — past experience or situation",
+        structure: "subject + had + noun (experience)",
+        examples: [
+          "We had a wonderful time at the beach last summer.",
+          "He had a headache all day long yesterday.",
+        ],
+      },
+      {
+        rule: "HAD — negative: didn't have",
+        structure: "subject + didn't have + noun",
+        examples: [
+          "I didn't have enough money to buy the book.",
+          "She didn't have time to eat breakfast before school.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-regular-irregular",
+    title: "Regular & Irregular Verbs",
+    color: "#0891B2",
+    level: 1,
+    rules: [
+      {
+        rule: "Regular verbs — add -ED in past simple and past participle",
+        structure:
+          "base form + -ed  (walk → walked, play → played, clean → cleaned)",
+        examples: [
+          "She walked to school because she missed the bus.",
+          "They played football after school yesterday.",
+        ],
+      },
+      {
+        rule: "Regular verbs — spelling rules: double consonant / drop e / y → ied",
+        structure: "stop → stopped  |  live → lived  |  study → studied",
+        examples: [
+          "He stopped the car at the traffic light.",
+          "She studied all night for the important exam.",
+        ],
+      },
+      {
+        rule: "Irregular verbs — different past simple form (must be memorized)",
+        structure:
+          "go → went  |  eat → ate  |  come → came  |  see → saw  |  take → took",
+        examples: [
+          "We went to the cinema and saw a great film.",
+          "She took her umbrella because it was raining.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-simple-past",
+    title: "Simple Past Tense",
+    color: "#059669",
+    level: 1,
+    rules: [
+      {
+        rule: "Simple Past — completed actions at a specific past time",
+        structure: "subject + V2 (past form)",
+        examples: [
+          "She visited her grandmother last Sunday afternoon.",
+          "They watched a movie together after dinner.",
+        ],
+      },
+      {
+        rule: "Negative: didn't + base verb  |  Question: Did + subject + base verb?",
+        structure:
+          "subject + didn't + base verb  |  Did + subject + base verb?",
+        examples: [
+          "I didn't go to school yesterday because I was sick.",
+          "Did you enjoy the party last night?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-adj-quantity",
+    title: "Adj. of Quantity",
+    color: "#D97706",
+    level: 1,
+    rules: [
+      {
+        rule: "SOME — for positive statements (countable & uncountable)",
+        structure: "some + noun (positive sentences)",
+        examples: [
+          "There are some apples in the basket on the table.",
+          "She drank some water after her run.",
+        ],
+      },
+      {
+        rule: "ANY — for questions and negatives",
+        structure: "any + noun (questions and negatives)",
+        examples: [
+          "Is there any milk left in the fridge?",
+          "I don't have any money with me right now.",
+        ],
+      },
+      {
+        rule: "NO — none at all (replaces 'not any')",
+        structure: "no + noun (= not any)",
+        examples: [
+          "There is no sugar in this coffee — it's too bitter.",
+          "We have no time left — we must leave now.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-adv-manner",
+    title: "Adverbs of Manner",
+    color: "#DC2626",
+    level: 1,
+    rules: [
+      {
+        rule: "Adverbs of manner — describe how an action is performed",
+        structure: "verb + adverb of manner (often at end of clause)",
+        examples: [
+          "She answered all the questions correctly.",
+          "He drives very carefully on rainy days.",
+        ],
+      },
+      {
+        rule: "Formation: adjective + LY",
+        structure:
+          "quiet → quietly  |  slow → slowly  |  beautiful → beautifully",
+        examples: [
+          "The children sang beautifully at the school concert.",
+          "Please speak slowly so everyone can understand.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-wh-questions",
+    title: "WH-Questions",
+    color: "#7C3AED",
+    level: 1,
+    rules: [
+      {
+        rule: "WH-questions with BE (past and present)",
+        structure: "Wh-word + was/were + subject?",
+        examples: [
+          "Where were you last night? — I was at home.",
+          "Who was your teacher in primary school?",
+        ],
+      },
+      {
+        rule: "WH-questions with DID (simple past)",
+        structure: "Wh-word + did + subject + base verb?",
+        examples: [
+          "What did you eat for lunch today?",
+          "When did she arrive at the airport?",
+        ],
+      },
+      {
+        rule: "HOW MUCH / HOW MANY / HOW LONG / HOW OFTEN",
+        structure: "How + adverb/adjective + did + subject + verb?",
+        examples: [
+          "How long did the film last? — About two hours.",
+          "How many people came to the wedding?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-present-continuous",
+    title: "Present Continuous Tense",
+    color: "#DB2777",
+    level: 1,
+    rules: [
+      {
+        rule: "Present Continuous — action happening now or around now",
+        structure: "subject + is/am/are + V-ing",
+        examples: [
+          "I am studying English grammar right now.",
+          "She is cooking dinner in the kitchen.",
+        ],
+      },
+      {
+        rule: "Present Continuous — temporary situation (not permanent)",
+        structure: "subject + is/am/are + V-ing (temporary)",
+        examples: [
+          "He is staying with his uncle this week.",
+          "They are living in an apartment while building their house.",
+        ],
+      },
+      {
+        rule: "Contrast: Simple Present (habit) vs Present Continuous (now)",
+        structure: "always (habit) vs right now (continuous)",
+        examples: [
+          "She usually drinks tea, but today she is drinking coffee.",
+          "He walks to school every day, but today he is taking the bus.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-preposition",
+    title: "Preposition",
+    color: "#0891B2",
+    level: 1,
+    rules: [
+      {
+        rule: "Prepositions of TIME: at, on, in",
+        structure: "at + time  |  on + day/date  |  in + month/year/season",
+        examples: [
+          "The class starts at 8 o'clock on Monday morning.",
+          "She was born in April, in the year 2005.",
+        ],
+      },
+      {
+        rule: "Prepositions of PLACE: at, on, in, under, next to, between, behind",
+        structure: "preposition + place noun",
+        examples: [
+          "The cat is under the table near the window.",
+          "The school is between the bank and the post office.",
+        ],
+      },
+      {
+        rule: "Prepositions of MOVEMENT: to, from, into, out of, through, across",
+        structure: "verb of movement + preposition + place",
+        examples: [
+          "She walked across the street to the bus stop.",
+          "He ran into the building to escape from the rain.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-past-continuous",
+    title: "Past Continuous Tense",
+    color: "#059669",
+    level: 1,
+    rules: [
+      {
+        rule: "Past Continuous — action in progress at a specific past time",
+        structure: "subject + was/were + V-ing",
+        examples: [
+          "At 8 PM last night, I was watching TV with my family.",
+          "They were playing outside when it started to rain.",
+        ],
+      },
+      {
+        rule: "Past Continuous interrupted by Simple Past — using WHEN",
+        structure: "was/were + V-ing + when + simple past",
+        examples: [
+          "She was sleeping when the phone rang loudly.",
+          "I was having breakfast when he arrived at the door.",
+        ],
+      },
+      {
+        rule: "Two parallel actions in the past — using WHILE",
+        structure: "while + was/were + V-ing, subject + was/were + V-ing",
+        examples: [
+          "While I was studying, she was watching TV.",
+          "He was reading while she was cooking dinner.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-past-ability",
+    title: "Past Ability",
+    color: "#D97706",
+    level: 1,
+    rules: [
+      {
+        rule: "COULD — general ability in the past",
+        structure: "subject + could + base verb",
+        examples: [
+          "When I was young, I could run very fast.",
+          "She could speak three languages before she was ten.",
+        ],
+      },
+      {
+        rule: "COULDN'T — inability in the past",
+        structure: "subject + couldn't + base verb",
+        examples: [
+          "I couldn't swim when I was five years old.",
+          "He couldn't find his keys anywhere in the house.",
+        ],
+      },
+      {
+        rule: "WAS / WERE ABLE TO — specific achievement (managed to do it once)",
+        structure: "subject + was/were able to + base verb",
+        examples: [
+          "She was able to finish the exam just before time was up.",
+          "They were able to escape the building before the fire spread.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-present-obligations",
+    title: "Present Obligations",
+    color: "#DC2626",
+    level: 1,
+    rules: [
+      {
+        rule: "MUST — strong personal obligation or necessity",
+        structure: "subject + must + base verb",
+        examples: [
+          "You must study hard if you want to pass the exam.",
+          "I must call my mother tonight — she's been waiting.",
+        ],
+      },
+      {
+        rule: "HAVE TO — external obligation (rules, laws, requirements)",
+        structure: "subject + have to / has to + base verb",
+        examples: [
+          "Students have to wear the school uniform every day.",
+          "She has to submit the assignment by Friday.",
+        ],
+      },
+      {
+        rule: "MUSTN'T — prohibition (not permitted at all)",
+        structure: "subject + mustn't + base verb",
+        examples: [
+          "You mustn't use your phone during the exam.",
+          "We mustn't make noise in the library.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-yes-no-questions",
+    title: "Yes/No Questions",
+    color: "#7C3AED",
+    level: 1,
+    rules: [
+      {
+        rule: "Yes/No questions with BE — present and past",
+        structure: "Is/Am/Are/Was/Were + subject + complement?",
+        examples: [
+          "Is she your sister? — Yes, she is. / No, she isn't.",
+          "Was he at the meeting yesterday? — Yes, he was.",
+        ],
+      },
+      {
+        rule: "Yes/No questions with DO / DOES — simple present",
+        structure: "Do/Does + subject + base verb?",
+        examples: [
+          "Do you like spicy food? — No, I don't.",
+          "Does he work here? — Yes, he does.",
+        ],
+      },
+      {
+        rule: "Yes/No questions with DID — simple past",
+        structure: "Did + subject + base verb?",
+        examples: [
+          "Did you enjoy the concert last night? — Yes, I did.",
+          "Did she pass the exam? — No, she didn't.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-present-perfect",
+    title: "Present Perfect Tense",
+    color: "#DB2777",
+    level: 1,
+    rules: [
+      {
+        rule: "Present Perfect — past experience with a present connection",
+        structure: "subject + have/has + V3 (past participle)",
+        examples: [
+          "I have visited Paris three times in my life.",
+          "She has finished her homework already.",
+        ],
+      },
+      {
+        rule: "Negative: haven't/hasn't + V3  |  Question: Have/Has + subject + V3?",
+        structure: "subject + haven't/hasn't + V3  |  Have/Has + subject + V3?",
+        examples: [
+          "He hasn't eaten anything since this morning.",
+          "Have you ever tried sushi before?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-gone-been",
+    title: "Gone & Been",
+    color: "#0891B2",
+    level: 1,
+    rules: [
+      {
+        rule: "GONE — the person has left and has NOT yet returned",
+        structure: "subject + has/have + gone + to + place",
+        examples: [
+          "She has gone to the market — she'll be back soon.",
+          "He has gone to Dubai for a business trip.",
+        ],
+      },
+      {
+        rule: "BEEN — the person went somewhere and has already come back",
+        structure: "subject + has/have + been + to + place",
+        examples: [
+          "I have been to London twice — it's a beautiful city.",
+          "She has been to the doctor and is back home now.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-ppt-markers",
+    title: "Present Perfect (yet, just, still, already)",
+    color: "#059669",
+    level: 1,
+    rules: [
+      {
+        rule: "ALREADY — sooner than expected (positive sentences)",
+        structure: "subject + have/has + already + V3",
+        examples: [
+          "She has already eaten — she's not hungry anymore.",
+          "I have already seen this film — let's watch something else.",
+        ],
+      },
+      {
+        rule: "YET — by now (questions and negatives)",
+        structure:
+          "subject + haven't/hasn't + V3 + yet  |  Have/Has + subject + V3 + yet?",
+        examples: [
+          "Have you finished your homework yet?",
+          "He hasn't arrived yet — we should call him.",
+        ],
+      },
+      {
+        rule: "JUST — very recently, a moment ago",
+        structure: "subject + have/has + just + V3",
+        examples: [
+          "I have just had breakfast — I'm still full.",
+          "She has just called me — she's on her way here.",
+        ],
+      },
+      {
+        rule: "STILL — continuing or not yet done (negative = still hasn't)",
+        structure: "subject + still + haven't/hasn't + V3",
+        examples: [
+          "He still hasn't replied to my message from yesterday.",
+          "They still haven't decided where to go for the holiday.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-comparison",
+    title: "Comparison of Adj.",
+    color: "#D97706",
+    level: 1,
+    rules: [
+      {
+        rule: "Comparative — comparing two things",
+        structure: "adjective-er / more + adjective + than",
+        examples: [
+          "She is taller than her brother by ten centimetres.",
+          "This exam was more difficult than the last one.",
+        ],
+      },
+      {
+        rule: "Superlative — comparing within a group",
+        structure: "the + adjective-est / the most + adjective + in/of",
+        examples: [
+          "He is the tallest student in the whole class.",
+          "This is the most interesting book I have ever read.",
+        ],
+      },
+      {
+        rule: "Irregular: good → better → best  /  bad → worse → worst",
+        structure: "subject + be + irregular comparative/superlative",
+        examples: [
+          "Her English is better than mine — she practices every day.",
+          "This is the worst weather we have had all year.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-past-obligation",
+    title: "Past Obligation",
+    color: "#DC2626",
+    level: 1,
+    rules: [
+      {
+        rule: "HAD TO — obligation that existed in the past",
+        structure: "subject + had to + base verb",
+        examples: [
+          "I had to wake up very early to catch the morning flight.",
+          "She had to study all weekend for the final exam.",
+        ],
+      },
+      {
+        rule: "DIDN'T HAVE TO — no obligation in the past (optional)",
+        structure: "subject + didn't have to + base verb",
+        examples: [
+          "We didn't have to wear a uniform at our old school.",
+          "He didn't have to pay for the meal — his friend treated him.",
+        ],
+      },
+      {
+        rule: "WASN'T / WEREN'T ALLOWED TO — prohibition in the past",
+        structure: "subject + wasn't/weren't allowed to + base verb",
+        examples: [
+          "We weren't allowed to use our phones during class.",
+          "She wasn't allowed to stay out after 10 PM.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-imperatives",
+    title: "Imperatives",
+    color: "#7C3AED",
+    level: 1,
+    rules: [
+      {
+        rule: "Positive imperative — instruction, direction, advice",
+        structure: "Base verb + (object)",
+        examples: [
+          "Write your name at the top of the page.",
+          "Always check your work before you hand it in.",
+        ],
+      },
+      {
+        rule: "Negative imperative — prohibition or warning",
+        structure: "Don't + base verb",
+        examples: [
+          "Don't forget to bring your books to class tomorrow.",
+          "Don't speak while your classmate is presenting.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-similes",
+    title: "Similes",
+    color: "#DB2777",
+    level: 1,
+    rules: [
+      {
+        rule: "Similes — comparisons using AS...AS or LIKE",
+        structure:
+          "subject + verb + as + adjective + as + noun  OR  like + noun",
+        examples: [
+          "She is as brave as a lion — nothing scares her.",
+          "He sings like an angel — his voice is incredible.",
+        ],
+      },
+      {
+        rule: "Common similes with AS...AS",
+        structure: "as + adjective + as + comparison noun",
+        examples: [
+          "The snow is as white as a sheet of paper.",
+          "He is as strong as an ox — he can lift anything.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-indefinite-pronouns",
+    title: "Indefinite Pronouns",
+    color: "#0891B2",
+    level: 1,
+    rules: [
+      {
+        rule: "SOME- (something, someone, somewhere) — positive statements",
+        structure: "something/someone/somewhere + verb",
+        examples: [
+          "Someone left their bag in the classroom.",
+          "There is something strange about that old house.",
+        ],
+      },
+      {
+        rule: "ANY- (anything, anyone, anywhere) — questions and negatives",
+        structure: "anything/anyone/anywhere + verb",
+        examples: [
+          "Has anyone seen my red pen?",
+          "I didn't do anything wrong — I promise!",
+        ],
+      },
+      {
+        rule: "NO- (nothing, no one, nowhere) + EVERY- (everything, everyone, everywhere)",
+        structure: "no-/every- + positive verb",
+        examples: [
+          "No one knew the answer to that difficult question.",
+          "Everyone is welcome at this school.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-since-for",
+    title: "Since & For",
+    color: "#059669",
+    level: 1,
+    rules: [
+      {
+        rule: "FOR — used with a duration of time (how long)",
+        structure: "have/has + V3 + for + period of time",
+        examples: [
+          "She has lived in this city for ten years.",
+          "I have been waiting for nearly half an hour.",
+        ],
+      },
+      {
+        rule: "SINCE — used with a starting point (when it began)",
+        structure: "have/has + V3 + since + point in time",
+        examples: [
+          "He has worked here since 2018.",
+          "We haven't spoken since last Tuesday.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l1-determiners",
+    title: "Determiners",
+    color: "#D97706",
+    level: 1,
+    rules: [
+      {
+        rule: "Articles as determiners: a, an, the",
+        structure: "a/an + singular countable  |  the + any noun",
+        examples: [
+          "I bought a new book. The book is very interesting.",
+          "She is an actress — the most famous one in our country.",
+        ],
+      },
+      {
+        rule: "Quantifiers as determiners: some, any, much, many, few, little",
+        structure: "determiner + noun",
+        examples: [
+          "There are many students in this class.",
+          "She doesn't have much time left — she must hurry.",
+        ],
+      },
+      {
+        rule: "Demonstratives as determiners: this, that, these, those",
+        structure: "this/that + singular  |  these/those + plural",
+        examples: [
+          "These exercises are quite challenging for beginners.",
+          "That car parked outside belongs to my uncle.",
+        ],
+      },
+    ],
+  },
+
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // LEVEL TWO
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "l2-simple-past",
+    title: "Simple Past Tense",
+    color: "#7C3AED",
+    level: 2,
+    rules: [
+      {
+        rule: "Simple Past — completed actions with a definite past time",
+        structure: "subject + V2 (regular: +ed / irregular: different form)",
+        examples: [
+          "She left the office at 5 PM sharp yesterday.",
+          "They won the championship three years ago.",
+        ],
+      },
+      {
+        rule: "Negative: didn't + base verb  |  Question: Did + subject + base verb?",
+        structure:
+          "subject + didn't + base verb  |  Did + subject + base verb?",
+        examples: [
+          "He didn't study enough, so he failed the test.",
+          "Did you understand everything the teacher explained?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-present-perfect",
+    title: "Present Perfect Tense",
+    color: "#DB2777",
+    level: 2,
+    rules: [
+      {
+        rule: "Present Perfect — experience, recent actions, situations from past to now",
+        structure: "subject + have/has + V3",
+        examples: [
+          "I have never tried Indian food before — it looks delicious.",
+          "She has worked here since she graduated from university.",
+        ],
+      },
+      {
+        rule: "EVER / NEVER — with present perfect for life experiences",
+        structure:
+          "Have/Has + subject + ever + V3?  |  subject + has/have + never + V3",
+        examples: [
+          "Have you ever ridden a horse before?",
+          "He has never been to Europe — he hopes to go one day.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-present-perfect-continuous",
+    title: "Present Perfect Continuous",
+    color: "#0891B2",
+    level: 2,
+    rules: [
+      {
+        rule: "Present Perfect Continuous — action that started in the past and is still ongoing",
+        structure: "subject + have/has + been + V-ing",
+        examples: [
+          "She has been studying for three hours without a break.",
+          "It has been raining since early this morning.",
+        ],
+      },
+      {
+        rule: "Negative: hasn't/haven't been + V-ing  |  Question: Have/Has + subject + been + V-ing?",
+        structure:
+          "subject + haven't/hasn't + been + V-ing  |  Have/Has + subject + been + V-ing?",
+        examples: [
+          "He hasn't been sleeping well lately — he seems very tired.",
+          "How long have you been waiting here?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-simple-future",
+    title: "Simple Future",
+    color: "#059669",
+    level: 2,
+    rules: [
+      {
+        rule: "WILL — predictions, promises, spontaneous decisions, offers",
+        structure: "subject + will + base verb",
+        examples: [
+          "I think technology will change our lives dramatically.",
+          "Wait here — I'll get you a glass of water.",
+        ],
+      },
+      {
+        rule: "GOING TO — planned intentions and predictions with present evidence",
+        structure: "subject + is/am/are + going to + base verb",
+        examples: [
+          "She is going to start a new business next year.",
+          "Be careful — you're going to spill that hot drink!",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-past-cont-present-cont",
+    title: "Past Cont. & Present Cont.",
+    color: "#D97706",
+    level: 2,
+    rules: [
+      {
+        rule: "Present Continuous — happening right now or around this time",
+        structure: "subject + is/am/are + V-ing",
+        examples: [
+          "She is preparing for her presentation right now.",
+          "I am currently reading a very long novel.",
+        ],
+      },
+      {
+        rule: "Past Continuous — in progress at a specific moment in the past",
+        structure: "subject + was/were + V-ing",
+        examples: [
+          "At midnight, they were still celebrating the New Year.",
+          "She was working on her laptop when the power cut out.",
+        ],
+      },
+      {
+        rule: "Combined: Past Continuous (background) + Simple Past (interruption) — WHEN",
+        structure: "was/were + V-ing + when + simple past",
+        examples: [
+          "I was washing the dishes when she called me.",
+          "They were hiking when the storm suddenly started.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-want",
+    title: "Usages of Want",
+    color: "#DC2626",
+    level: 2,
+    rules: [
+      {
+        rule: "WANT + noun — desire for something",
+        structure: "subject + want/wants + noun",
+        examples: [
+          "I want a cup of tea with milk and no sugar.",
+          "She wants a new laptop for her studies.",
+        ],
+      },
+      {
+        rule: "WANT + to-infinitive — desire to do something",
+        structure: "subject + want/wants + to + base verb",
+        examples: [
+          "He wants to become a professional architect.",
+          "They want to travel to Japan next summer.",
+        ],
+      },
+      {
+        rule: "WANT + object + to-infinitive — desire someone else to do something",
+        structure: "subject + want + object + to + base verb",
+        examples: [
+          "She wants her son to study harder this term.",
+          "The manager wants us to submit the report by Friday.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-linking-verbs",
+    title: "Linking Verbs",
+    color: "#7C3AED",
+    level: 2,
+    rules: [
+      {
+        rule: "Linking verbs — connect subject to an adjective or noun (NOT action verbs)",
+        structure: "subject + linking verb + adjective/noun",
+        examples: [
+          "She looks very tired today — she should rest.",
+          "The soup smells delicious — what did you put in it?",
+        ],
+      },
+      {
+        rule: "Common linking verbs: be, seem, appear, become, feel, taste, look, smell, sound",
+        structure: "subject + linking verb + adjective (NOT adverb)",
+        examples: [
+          "He seems happy about the exam results.",
+          "The music sounds beautiful — who is playing?",
+        ],
+      },
+      {
+        rule: "BECOME — linking verb for change of state",
+        structure: "subject + become/became + adjective/noun",
+        examples: [
+          "She became a doctor after eight years of studying.",
+          "The situation became very complicated very quickly.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-too-enough",
+    title: "Too + Adj. and Adj. + Enough",
+    color: "#DB2777",
+    level: 2,
+    rules: [
+      {
+        rule: "TOO + adjective — excessive degree (causes a problem)",
+        structure: "subject + be + too + adjective (+ to + base verb)",
+        examples: [
+          "He is too young to vote in the election.",
+          "This box is too heavy to carry by myself.",
+        ],
+      },
+      {
+        rule: "Adjective + ENOUGH — sufficient degree (able to do something)",
+        structure: "subject + be + adjective + enough (+ to + base verb)",
+        examples: [
+          "She is tall enough to reach the top shelf.",
+          "Are you confident enough to speak in front of everyone?",
+        ],
+      },
+      {
+        rule: "NOT + adjective + ENOUGH — insufficient degree",
+        structure: "subject + be + not + adjective + enough",
+        examples: [
+          "He isn't experienced enough for this senior position.",
+          "The room isn't big enough for all of us to sit comfortably.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-obligation",
+    title: "Obligation",
+    color: "#0891B2",
+    level: 2,
+    rules: [
+      {
+        rule: "MUST — strong internal or personal obligation",
+        structure: "subject + must + base verb",
+        examples: [
+          "We must respect our elders and our teachers.",
+          "I must remember to pay the electricity bill today.",
+        ],
+      },
+      {
+        rule: "HAVE TO — external obligation from rules or authority",
+        structure: "subject + have to / has to + base verb",
+        examples: [
+          "Drivers have to follow the speed limit on all roads.",
+          "She has to get permission before leaving the school.",
+        ],
+      },
+      {
+        rule: "DON'T HAVE TO — no obligation (optional)",
+        structure: "subject + don't/doesn't have to + base verb",
+        examples: [
+          "You don't have to attend — it's completely optional.",
+          "She doesn't have to wear a uniform at her new job.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-ability",
+    title: "Ability Expression (Can, Could, Able To)",
+    color: "#059669",
+    level: 2,
+    rules: [
+      {
+        rule: "CAN — present ability",
+        structure: "subject + can + base verb",
+        examples: [
+          "She can solve complex mathematical problems easily.",
+          "I can understand Spanish but I can't speak it well.",
+        ],
+      },
+      {
+        rule: "COULD — past ability or polite requests",
+        structure: "subject + could + base verb",
+        examples: [
+          "He could play chess by the age of seven.",
+          "Could you explain that again more slowly, please?",
+        ],
+      },
+      {
+        rule: "BE ABLE TO — ability in all tenses (more formal)",
+        structure: "subject + am/is/are/was/were + able to + base verb",
+        examples: [
+          "She was able to finish the project despite all the difficulties.",
+          "Will you be able to come to the meeting on Thursday?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-tag-questions",
+    title: "Tag Questions",
+    color: "#D97706",
+    level: 2,
+    rules: [
+      {
+        rule: "Tag questions — positive statement + negative tag",
+        structure: "positive statement + auxiliary + n't + subject pronoun?",
+        examples: [
+          "She is a great teacher, isn't she?",
+          "They finished the work, didn't they?",
+        ],
+      },
+      {
+        rule: "Tag questions — negative statement + positive tag",
+        structure: "negative statement + auxiliary + subject pronoun?",
+        examples: [
+          "He hasn't called yet, has he?",
+          "You don't like spicy food, do you?",
+        ],
+      },
+      {
+        rule: "Special cases: I am → aren't I?  /  Let's → shall we?  /  Imperative → will you?",
+        structure: "special statement + special tag",
+        examples: [
+          "I'm next in line, aren't I?",
+          "Let's take a short break, shall we?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-similes",
+    title: "Similes",
+    color: "#DC2626",
+    level: 2,
+    rules: [
+      {
+        rule: "Similes — comparing using AS...AS",
+        structure: "as + adjective + as + noun phrase",
+        examples: [
+          "She is as graceful as a swan when she dances.",
+          "The room was as silent as a graveyard at midnight.",
+        ],
+      },
+      {
+        rule: "Similes — comparing using LIKE",
+        structure: "subject + verb + like + noun/noun phrase",
+        examples: [
+          "He ran like the wind and won the race easily.",
+          "She works like a machine — she never stops.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-rejoinders",
+    title: "Rejoinders",
+    color: "#7C3AED",
+    level: 2,
+    rules: [
+      {
+        rule: "Positive rejoinders — agreeing with positive statements",
+        structure: "So + auxiliary + subject",
+        examples: [
+          '"I love Italian food." → "So do I!" (Me too)',
+          '"She is very smart." → "So is her brother."',
+        ],
+      },
+      {
+        rule: "Negative rejoinders — agreeing with negative statements",
+        structure: "Neither / Nor + auxiliary + subject",
+        examples: [
+          '"I don\'t like cold weather." → "Neither do I."',
+          '"She can\'t swim." → "Nor can he."',
+        ],
+      },
+      {
+        rule: "Disagreeing rejoinders — But I do / But I don't",
+        structure: "But + subject + auxiliary (opposite polarity)",
+        examples: [
+          '"I hate homework." → "But I don\'t — I find it helpful."',
+          '"She doesn\'t enjoy cooking." → "But I do — I cook every day."',
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-reciprocal-pronouns",
+    title: "Reciprocal Pronouns",
+    color: "#DB2777",
+    level: 2,
+    rules: [
+      {
+        rule: "EACH OTHER — two people doing something mutually",
+        structure: "subject (two) + verb + each other",
+        examples: [
+          "They looked at each other and started laughing.",
+          "She and her best friend call each other every single day.",
+        ],
+      },
+      {
+        rule: "ONE ANOTHER — more than two people doing something mutually",
+        structure: "subject (plural, more than two) + verb + one another",
+        examples: [
+          "The team members helped one another during the difficult project.",
+          "In that small village, everyone knows one another very well.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-reflexive-pronouns",
+    title: "Reflexive Pronouns",
+    color: "#0891B2",
+    level: 2,
+    rules: [
+      {
+        rule: "Reflexive pronouns — when subject and object refer to the same person",
+        structure:
+          "myself / yourself / himself / herself / itself / ourselves / yourselves / themselves",
+        examples: [
+          "She hurt herself while playing football in the garden.",
+          "He taught himself to play the guitar — no teacher needed.",
+        ],
+      },
+      {
+        rule: "BY + reflexive pronoun — doing something alone, without help",
+        structure: "subject + verb + by + reflexive pronoun",
+        examples: [
+          "She lives by herself in a small apartment in the city.",
+          "Did you cook all of this by yourself? It's amazing!",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-used-to",
+    title: "Past Habitual Actions (Used To)",
+    color: "#059669",
+    level: 2,
+    rules: [
+      {
+        rule: "USED TO — past habits or states that no longer exist",
+        structure: "subject + used to + base verb",
+        examples: [
+          "I used to play video games for hours every day.",
+          "She used to live in the city, but now she lives in the countryside.",
+        ],
+      },
+      {
+        rule: "Negative: didn't use to  |  Question: Did + subject + use to?",
+        structure:
+          "subject + didn't use to + base verb  |  Did + subject + use to + base verb?",
+        examples: [
+          "He didn't use to like vegetables, but now he loves them.",
+          "Did you use to have a pet when you were young?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-indirect-command",
+    title: "Indirect Command / Request",
+    color: "#D97706",
+    level: 2,
+    rules: [
+      {
+        rule: "Reporting commands — told / ordered + object + to-infinitive",
+        structure: "said → told + object + to + base verb",
+        examples: [
+          '"Clean your room." → She told me to clean my room.',
+          '"Stand up." → The officer ordered the soldiers to stand up.',
+        ],
+      },
+      {
+        rule: "Reporting requests — asked + object + to-infinitive",
+        structure: "said → asked + object + to + base verb",
+        examples: [
+          '"Please help me." → She asked me to help her.',
+          '"Could you open the window?" → He asked her to open the window.',
+        ],
+      },
+      {
+        rule: "Negative commands/requests — told/asked + object + NOT to + base verb",
+        structure: "told/asked + object + not to + base verb",
+        examples: [
+          '"Don\'t be late." → She told him not to be late.',
+          '"Please don\'t make noise." → He asked them not to make noise.',
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-reported-command",
+    title: "Reported Command / Request",
+    color: "#DC2626",
+    level: 2,
+    rules: [
+      {
+        rule: "Reported commands — change imperative using told/ordered",
+        structure: "told / ordered / instructed + object + to + base verb",
+        examples: [
+          '"Leave immediately!" → The manager ordered everyone to leave the building.',
+          '"Submit your forms by Monday." → She told the students to submit their forms.',
+        ],
+      },
+      {
+        rule: "Reported requests — change polite requests using asked/begged",
+        structure: "asked / begged + object + to + base verb",
+        examples: [
+          '"Could you lend me some money?" → She asked him to lend her some money.',
+          '"Please don\'t tell anyone." → He begged her not to tell anyone.',
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-participle-adj",
+    title: "Participle Adjective",
+    color: "#7C3AED",
+    level: 2,
+    rules: [
+      {
+        rule: "-ING adjective — describes the thing CAUSING the feeling",
+        structure:
+          "subject (thing) + be + V-ing adjective (boring, exciting, interesting, tiring)",
+        examples: [
+          "This film is very exciting — I can't stop watching it.",
+          "The lecture was so boring that half the students fell asleep.",
+        ],
+      },
+      {
+        rule: "-ED adjective — describes the person EXPERIENCING the feeling",
+        structure:
+          "subject (person) + be + V-ed adjective (bored, excited, interested, tired)",
+        examples: [
+          "She felt very excited about her first trip abroad.",
+          "I was bored during the long meeting — it never seemed to end.",
+        ],
+      },
+      {
+        rule: "Common pairs: interested/interesting  |  bored/boring  |  tired/tiring",
+        structure:
+          "-ING = causes the feeling  |  -ED = experiences the feeling",
+        examples: [
+          "The story is interesting. → I am interested in the story.",
+          "The journey is tiring. → She is tired from the journey.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-advice",
+    title: "Advices (Should)",
+    color: "#DB2777",
+    level: 2,
+    rules: [
+      {
+        rule: "SHOULD — giving advice or a recommendation",
+        structure: "subject + should + base verb",
+        examples: [
+          "You should drink more water every day — it's good for you.",
+          "She should see a doctor if her headache continues.",
+        ],
+      },
+      {
+        rule: "SHOULDN'T — advising against doing something",
+        structure: "subject + shouldn't + base verb",
+        examples: [
+          "You shouldn't eat so much junk food — it's bad for your health.",
+          "He shouldn't stay up so late the night before an exam.",
+        ],
+      },
+      {
+        rule: "OUGHT TO — similar to should, slightly more formal",
+        structure: "subject + ought to + base verb",
+        examples: [
+          "We ought to be more respectful toward older people.",
+          "You ought to apologize to her — what you said was unkind.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "l2-relative-clause",
+    title: "Relative Clause (Who, That, Which)",
+    color: "#0891B2",
+    level: 2,
+    rules: [
+      {
+        rule: "WHO — defining relative clause for people",
+        structure: "noun (person) + who + verb",
+        examples: [
+          "The doctor who treated me was very professional and kind.",
+          "I know a girl who speaks six different languages.",
+        ],
+      },
+      {
+        rule: "WHICH — defining relative clause for things and animals",
+        structure: "noun (thing/animal) + which + verb",
+        examples: [
+          "The car which she bought last year is already broken.",
+          "I read a book which changed my whole perspective on life.",
+        ],
+      },
+      {
+        rule: "THAT — defining relative clause for both people and things",
+        structure: "noun (person or thing) + that + verb",
+        examples: [
+          "The student that won the prize worked very hard all year.",
+          "This is the book that everyone is talking about right now.",
+        ],
+      },
+    ],
+  },
+
   // ─────────────────────────────────────────────────────────────────────────────
   // LEVEL 3
   // ─────────────────────────────────────────────────────────────────────────────

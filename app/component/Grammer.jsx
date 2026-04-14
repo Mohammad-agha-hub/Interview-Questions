@@ -3,42 +3,46 @@
 import { useState } from "react";
 import { grammarTopics } from "@/app/grammer";
 
-
 const LEVEL_META = {
-  3: { label: "Level 3", accent: "#7C3AED", bg: "#F5F3FF" },
-  4: { label: "Level 4", accent: "#0891B2", bg: "#ECFEFF" },
-  5: { label: "Level 5", accent: "#059669", bg: "#ECFDF5" },
+  beginner: { label: "Beginner", accent: "#B45309", bg: "#FEF3C7" },
+  1: { label: "Level 1", accent: "#DC2626", bg: "#FEF2F2" },
+ 
+  2: { label: "Level 2", accent: "#7C3AED", bg: "#F5F3FF" },
+  3: { label: "Level 3", accent: "#0891B2", bg: "#ECFEFF" },
+  4: { label: "Level 4", accent: "#059669", bg: "#ECFDF5" },
+  5: { label: "Level 5", accent: "#D97706", bg: "#FFFBEB" },
 };
 
+const ALL_LEVELS = ["beginner", 1, 2, 3, 4, 5];
+
 export default function GrammarTab() {
-  const [activeLevel, setActiveLevel] = useState(3);
+  const [activeLevel, setActiveLevel] = useState("beginner");
   const [activeTopic, setActiveTopic] = useState("");
   const [search, setSearch] = useState("");
 
-  // Filter topics to the active level
   const levelTopics = grammarTopics.filter((t) => t.level === activeLevel);
 
-  // Resolve active topic: prefer saved activeTopic, else default to first of level
   const resolvedTopicId =
     levelTopics.find((t) => t.id === activeTopic)?.id ?? levelTopics[0]?.id;
 
-  const topic = levelTopics.find((t) => t.id === resolvedTopicId) ?? levelTopics[0];
+  const topic =
+    levelTopics.find((t) => t.id === resolvedTopicId) ?? levelTopics[0];
 
   const filteredRules = search.trim()
     ? topic?.rules.filter(
         (r) =>
           r.rule.toLowerCase().includes(search.toLowerCase()) ||
           r.examples.some((e) =>
-            e.toLowerCase().includes(search.toLowerCase())
-          )
+            e.toLowerCase().includes(search.toLowerCase()),
+          ),
       )
-    : topic?.rules ?? [];
+    : (topic?.rules ?? []);
 
   const meta = LEVEL_META[activeLevel];
 
   const handleLevelChange = (level) => {
     setActiveLevel(level);
-    setActiveTopic(""); // reset so it defaults to first topic of new level
+    setActiveTopic("");
     setSearch("");
   };
 
@@ -46,7 +50,7 @@ export default function GrammarTab() {
     <>
       {/* ── Level Selector ── */}
       <div className="level-selector">
-        {([3, 4, 5]).map((lvl) => {
+        {ALL_LEVELS.map((lvl) => {
           const m = LEVEL_META[lvl];
           const isActive = activeLevel === lvl;
           return (
@@ -108,9 +112,13 @@ export default function GrammarTab() {
             <span className="topic-title">{topic.title}</span>
             <span
               className="level-badge"
-              style={{ backgroundColor: meta.bg, color: meta.accent, border: `1px solid ${meta.accent}` }}
+              style={{
+                backgroundColor: meta.bg,
+                color: meta.accent,
+                border: `1px solid ${meta.accent}`,
+              }}
             >
-              Level {activeLevel}
+              {meta.label}
             </span>
             <span className="topic-count">{topic.rules.length} rules</span>
           </div>
@@ -171,50 +179,31 @@ export default function GrammarTab() {
         </>
       )}
 
-      {/* ── Inline styles for new elements ── */}
       <style>{`
         .level-selector {
           display: flex;
-          gap: 10px;
+          gap: 8px;
           margin-bottom: 18px;
           flex-wrap: wrap;
         }
-
         .level-btn {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 2px;
-          padding: 10px 22px;
+          padding: 9px 12px;
           border-radius: 12px;
           border: 2px solid transparent;
           cursor: pointer;
           font-family: inherit;
           transition: all 0.18s ease;
           flex: 1;
-          min-width: 90px;
+          min-width: 72px;
         }
-
-        .level-btn:hover {
-          filter: brightness(0.95);
-          transform: translateY(-1px);
-        }
-
-        .level-btn--active {
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .level-btn-label {
-          font-size: 14px;
-          font-weight: 700;
-          letter-spacing: 0.3px;
-        }
-
-        .level-btn-count {
-          font-size: 11px;
-          font-weight: 500;
-        }
-
+        .level-btn:hover { filter: brightness(0.95); transform: translateY(-1px); }
+        .level-btn--active { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .level-btn-label { font-size: 13px; font-weight: 700; letter-spacing: 0.3px; }
+        .level-btn-count { font-size: 10px; font-weight: 500; }
         .level-badge {
           font-size: 11px;
           font-weight: 700;
